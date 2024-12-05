@@ -1,0 +1,10 @@
+services:
+  nvim:
+    build:
+      context: image
+      dockerfile: Dockerfile
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
+    volumes:
+      - /home/adriannic:/home/adriannic/workspace
