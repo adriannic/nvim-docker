@@ -4,13 +4,15 @@ ENV LANG=es_ES.UTF-8
 ENV LANGUAGE=es_ES:es
 ENV TZ=Europe/Madrid
 
-ARG UID=1000
-ARG GID=1000
+ARG _UID=1000
+ARG _GID=1000
+
+USER root
 
 ENV USER adriannic
 ENV HOME /home/adriannic
 
-RUN groupadd -g $GID adriannic && useradd -g $GID -u $UID -m -s /bin/fish -l adriannic
+RUN groupadd -g $_GID adriannic && useradd -g $_GID -u $_UID -m -s /bin/fish -l adriannic
 
 EXPOSE 8080 8081 8082 8083 8084 8085
 
