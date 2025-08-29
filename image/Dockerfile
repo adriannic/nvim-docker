@@ -1,4 +1,4 @@
-FROM archlinux:base-devel-20241201.0.284684
+FROM archlinux:base-devel
 
 ENV LANG=es_ES.UTF-8
 ENV LANGUAGE=es_ES:es
@@ -15,7 +15,7 @@ RUN groupadd -g $GID adriannic && useradd -g $GID -u $UID -m -s /bin/fish -l adr
 EXPOSE 8080 8081 8082 8083 8084 8085
 
 # Install packages
-RUN pacman -Syu base-devel git neovim npm unzip rustup python wget ripgrep yarn nodejs fish lsd curl thefuck starship zoxide fastfetch fzf cmake gcc make --noconfirm --needed
+RUN pacman -Syu base-devel git neovim npm unzip rustup python wget ripgrep yarn nodejs fish lsd curl starship zoxide fastfetch fzf go cmake gcc make --noconfirm --needed
 
 USER $USER
 
