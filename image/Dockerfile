@@ -14,10 +14,8 @@ ENV HOME /home/adriannic
 
 RUN groupadd -g $_GID adriannic && useradd -g $_GID -u $_UID -m -s /bin/fish -l adriannic
 
-EXPOSE 8080 8081 8082 8083 8084 8085
-
 # Install packages
-RUN pacman -Syu base-devel git neovim npm unzip rustup python wget ripgrep yarn nodejs fish lsd curl starship zoxide fastfetch fzf go cmake gcc make --noconfirm --needed
+RUN pacman -Syu --noconfirm --needed base-devel cmake curl fastfetch fd fish fzf gcc git go lazygit lsd make neovim nodejs npm python ripgrep rustup starship unzip wget yarn zoxide 
 
 USER $USER
 
