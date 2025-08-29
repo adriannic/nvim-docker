@@ -14,8 +14,10 @@ ENV HOME /home/adriannic
 
 RUN groupadd -g $_GID adriannic && useradd -g $_GID -u $_UID -m -s /bin/fish -l adriannic
 
+RUN pacman -Syu --noconfirm --needed cuda
+
 # Install packages
-RUN pacman -Syu --noconfirm --needed base-devel cmake cuda curl fastfetch fd fish fzf gcc gdb git go lazygit lldb lsd make neovim nodejs npm python ripgrep rustup starship unzip wget yarn zoxide 
+RUN pacman -Syu --noconfirm --needed base-devel cmake curl fastfetch fd fish fzf gcc gdb git go lazygit lldb lsd make neovim nodejs npm python ripgrep rustup starship unzip wget yarn zoxide 
 
 USER $USER
 
